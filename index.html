@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ポートフォリオ</title>
+    <title>🥞 I want eat pancake - Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -15,7 +15,10 @@
     <div class="container">
         <nav class="nav-bar" id="navbar">
             <div class="nav-content">
-                <a href="#" class="nav-logo" onclick="showHome()">Portfolio</a>
+                <a href="#" class="nav-logo" onclick="showHome()">
+                    <img src="./data/sweets_pancake.png" alt="Pancake" class="logo-icon">
+                    <span class="logo-text">I want eat pancake</span>
+                </a>
                 <button class="nav-toggle" onclick="toggleNav()">
                     <span></span>
                     <span></span>
@@ -28,8 +31,18 @@
         <div id="home-page" class="page-container active">
             <header class="header-clay">
                 <div class="header-content">
-                    <h1 class="title-clay">ポートフォリオ</h1>
-                    <p class="subtitle-clay">開発したWebアプリケーション一覧</p>
+                    <div class="team-brand">
+                        <div class="pancake-hero">
+                            <img src="./data/sweets_pancake.png" alt="Pancake Stack" class="pancake-main">
+                            <img src="./data/tamago_pack.png" alt="Eggs" class="eggs-decoration">
+                        </div>
+                        <h1 class="title-clay">I want eat pancake</h1>
+                        <p class="team-tagline">美味しいコードを焼き上げるチーム</p>
+                    </div>
+                    <div class="team-description">
+                        <p class="team-motto">「一枚一枚、丁寧に焼き上げるように、一行一行、心を込めてコードを書く」</p>
+                        <p class="subtitle-clay">私たちが焼き上げたWebアプリケーション</p>
+                    </div>
                     <div class="header-decoration"></div>
                 </div>
             </header>
@@ -63,7 +76,11 @@
         
         <footer class="footer-clay">
             <div class="footer-content">
-                <p>&copy; 2024 Portfolio</p>
+                <div class="footer-brand">
+                    <img src="./data/sweets_pancake.png" alt="Pancake" class="footer-logo">
+                    <span class="footer-text">I want eat pancake</span>
+                </div>
+                <p>&copy; 2024 I want eat pancake - All rights reserved</p>
                 <div class="footer-decoration"></div>
             </div>
         </footer>

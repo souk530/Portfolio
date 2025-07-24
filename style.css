@@ -49,29 +49,29 @@ body {
 .background-texture::before {
     content: '';
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 300px;
-    height: 200px;
-    background: url('./data/image2.jpg') center/cover no-repeat;
-    border-radius: 20px;
-    opacity: 0.08;
+    top: 15%;
+    right: 8%;
+    width: 120px;
+    height: 120px;
+    background: url('./data/sweets_pancake.png') center/contain no-repeat;
+    opacity: 0.04;
     transform: rotate(15deg);
-    filter: blur(1px);
+    filter: blur(0.5px);
+    animation: pancakeFloat 6s ease-in-out infinite;
 }
 
 .background-texture::after {
     content: '';
     position: absolute;
-    bottom: 30%;
-    left: 5%;
-    width: 250px;
-    height: 180px;
-    background: url('./data/image2.jpg') center/cover no-repeat;
-    border-radius: 20px;
+    bottom: 25%;
+    left: 8%;
+    width: 80px;
+    height: 80px;
+    background: url('./data/tamago_pack.png') center/contain no-repeat;
     opacity: 0.06;
-    transform: rotate(-10deg);
-    filter: blur(1px);
+    transform: rotate(-15deg);
+    filter: blur(0.5px);
+    animation: eggBounce 7s ease-in-out infinite;
 }
 
 .container {
@@ -106,15 +106,38 @@ body {
 }
 
 .nav-logo {
-    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-logo:hover {
     color: var(--blue-primary);
+    transform: translateY(-1px);
+}
+
+.logo-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    animation: pancakeFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.logo-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+@keyframes pancakeFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(2deg); }
 }
 
 .nav-toggle {
@@ -171,9 +194,9 @@ body {
     left: 10px;
     width: 80px;
     height: 60px;
-    background: url('./data/image2.jpg') center/cover no-repeat;
+    background: url('./data/tamago_pack.png') center/contain no-repeat;
     border-radius: 10px;
-    opacity: 0.06;
+    opacity: 0.08;
     transform: rotate(-15deg);
     filter: blur(1px);
     z-index: 0;
@@ -186,9 +209,9 @@ body {
     right: 15px;
     width: 90px;
     height: 65px;
-    background: url('./data/image2.jpg') center/cover no-repeat;
+    background: url('./data/sweets_pancake.png') center/contain no-repeat;
     border-radius: 10px;
-    opacity: 0.05;
+    opacity: 0.06;
     transform: rotate(20deg);
     filter: blur(1px);
     z-index: 0;
@@ -197,6 +220,96 @@ body {
 .header-content {
     position: relative;
     z-index: 2;
+}
+
+.team-brand {
+    margin-bottom: 24px;
+}
+
+.pancake-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    height: 120px;
+}
+
+.pancake-main {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+    animation: pancakeStack 4s ease-in-out infinite;
+    filter: drop-shadow(0 6px 12px rgba(251, 191, 36, 0.4));
+    z-index: 2;
+}
+
+.eggs-decoration {
+    position: absolute;
+    width: 60px;
+    height: auto;
+    object-fit: contain;
+    right: -30px;
+    top: 10px;
+    animation: eggBounce 5s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
+    opacity: 0.8;
+    z-index: 1;
+}
+
+@keyframes pancakeStack {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(1deg); }
+    50% { transform: scale(1.02) rotate(-1deg); }
+    75% { transform: scale(1.08) rotate(0.5deg); }
+}
+
+@keyframes eggBounce {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    20% { transform: translateY(-8px) rotate(-2deg); }
+    40% { transform: translateY(-4px) rotate(1deg); }
+    60% { transform: translateY(-10px) rotate(-1deg); }
+    80% { transform: translateY(-2px) rotate(2deg); }
+}
+
+.team-tagline {
+    font-size: 1rem;
+    color: var(--yellow-primary);
+    font-weight: 600;
+    margin-bottom: 0;
+    font-style: italic;
+}
+
+.team-description {
+    margin: 32px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-motto {
+    font-size: 1.1rem;
+    color: var(--blue-primary);
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 16px;
+    padding: 16px 24px;
+    background: rgba(37, 99, 235, 0.05);
+    border-radius: 12px;
+    border-left: 4px solid var(--yellow-primary);
+    position: relative;
+}
+
+.team-motto::before {
+    content: '';
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background: url('./data/sweets_pancake.png') center/contain no-repeat;
+    opacity: 0.7;
 }
 
 .title-clay {
@@ -610,6 +723,22 @@ body {
     opacity: 0.15;
 }
 
+.float-element::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background: url('./data/sweets_pancake.png') center/contain no-repeat;
+    opacity: 0.8;
+}
+
+.float-element:nth-child(2)::before {
+    background: url('./data/tamago_pack.png') center/contain no-repeat;
+}
+
 .float-1 {
     width: 40px;
     height: 40px;
@@ -653,9 +782,31 @@ body {
     z-index: 2;
 }
 
+.footer-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.footer-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    animation: pancakeFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 2px 4px rgba(251, 191, 36, 0.3));
+}
+
+.footer-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
 .footer-content p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-bottom: 16px;
     font-weight: 400;
 }
