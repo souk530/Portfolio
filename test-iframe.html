@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe テスト</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .test-container {
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .test-container h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-style: italic;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>サービスのiframe埋め込みテスト</h1>
+    
+    <div class="test-container">
+        <h3>1. 簡易QRコード決済アプリ</h3>
+        <iframe src="https://payleaf.vercel.app/" onload="showSuccess(this)" onerror="showError(this)"></iframe>
+        <div class="result" id="result1"></div>
+    </div>
+    
+    <div class="test-container">
+        <h3>2. おかやまSDGsフェア会員サイト</h3>
+        <iframe src="https://sdgsfair.vercel.app/" onload="showSuccess(this)" onerror="showError(this)"></iframe>
+        <div class="result" id="result2"></div>
+    </div>
+    
+    <div class="test-container">
+        <h3>3. おかやまSDGsフェアアンケートアプリ</h3>
+        <iframe src="https://sdgsfair-questions.vercel.app/" onload="showSuccess(this)" onerror="showError(this)"></iframe>
+        <div class="result" id="result3"></div>
+    </div>
+    
+    <div class="test-container">
+        <h3>4. 吉備中央町観光コンシェルジュアプリ</h3>
+        <iframe src="https://tourism-lemon.vercel.app/" onload="showSuccess(this)" onerror="showError(this)"></iframe>
+        <div class="result" id="result4"></div>
+    </div>
+    
+    <div class="test-container">
+        <h3>5. ホームカミングデイスタンプラリーアプリ</h3>
+        <iframe src="https://fes-stamp-flax.vercel.app/" onload="showSuccess(this)" onerror="showError(this)"></iframe>
+        <div class="result" id="result5"></div>
+    </div>
+
+    <script>
+        let resultCounter = 1;
+        
+        function showSuccess(iframe) {
+            const resultDiv = document.getElementById('result' + resultCounter);
+            try {
+                // Try to access iframe content to check for X-Frame-Options
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframeDoc) {
+                    resultDiv.innerHTML = '<span class="success">✓ 埋め込み成功：プレビュー表示可能</span>';
+                } else {
+                    resultDiv.innerHTML = '<span class="error">✗ 埋め込み制限：Same-origin policyまたはX-Frame-Options</span>';
+                }
+            } catch (e) {
+                // Cross-origin restriction
+                if (iframe.src && iframe.src !== 'about:blank') {
+                    resultDiv.innerHTML = '<span class="error">✗ 埋め込み制限：CORS/X-Frame-Options により制限</span>';
+                } else {
+                    resultDiv.innerHTML = '<span class="error">✗ 読み込みエラー</span>';
+                }
+            }
+            resultCounter++;
+        }
+        
+        function showError(iframe) {
+            const resultDiv = document.getElementById('result' + resultCounter);
+            resultDiv.innerHTML = '<span class="error">✗ 読み込みエラー：サイトにアクセスできません</span>';
+            resultCounter++;
+        }
+        
+        // Check after page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                const iframes = document.querySelectorAll('iframe');
+                iframes.forEach((iframe, index) => {
+                    const resultDiv = document.getElementById('result' + (index + 1));
+                    if (!resultDiv.innerHTML) {
+                        try {
+                            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                            if (iframeDoc && iframeDoc.body && iframeDoc.body.innerHTML) {
+                                resultDiv.innerHTML = '<span class="success">✓ 埋め込み成功：プレビュー表示可能</span>';
+                            } else {
+                                resultDiv.innerHTML = '<span class="error">✗ 埋め込み制限：X-Frame-Options により制限</span>';
+                            }
+                        } catch (e) {
+                            resultDiv.innerHTML = '<span class="error">✗ 埋め込み制限：Same-origin policy により制限</span>';
+                        }
+                    }
+                });
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

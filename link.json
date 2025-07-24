@@ -1,0 +1,93 @@
+{
+  "payleaf": {
+    "id": "payleaf",
+    "title": "簡易QRコード決済アプリ",
+    "subtitle": "PayLeaf - モバイル決済ソリューション",
+    "description": "QRコードを使った簡単で安全な決済システム。店舗と顧客間でスムーズな取引を実現します。",
+    "url": "https://payleaf.vercel.app/",
+    "category": "フィンテック",
+    "tags": ["QRコード", "決済", "モバイルアプリ", "フィンテック"],
+    "year": "2024",
+    "status": "運用中",
+    "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+    "features": [
+      "QRコード決済機能",
+      "取引履歴管理",
+      "セキュアな認証システム",
+      "レスポンシブデザイン"
+    ],
+    "background": "現金決済の手間を解消し、よりスムーズな決済体験を提供するために開発されました。特に小規模店舗での導入を想定し、簡単操作と低コストでの運用を実現しています。",
+    "challenges": "セキュリティと利便性のバランス、多様な決済ニーズへの対応",
+    "solutions": "業界標準のセキュリティプロトコルを採用し、直感的なUIデザインで操作性を向上させました。",
+    "embeddable": true
+  },
+  "sdgsfair": {
+    "id": "sdgsfair",
+    "title": "おかやまSDGsフェア",
+    "subtitle": "持続可能な開発目標推進プラットフォーム",
+    "description": "岡山県のSDGs推進活動をサポートする統合プラットフォーム。イベント管理とアンケート機能を提供します。",
+    "urls": {
+      "main": "https://sdgsfair.vercel.app/",
+      "survey": "https://sdgsfair-questions.vercel.app/"
+    },
+    "category": "社会貢献",
+    "tags": ["SDGs", "イベント管理", "アンケート", "地域貢献"],
+    "year": "2024",
+    "status": "運用中",
+    "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+    "features": [
+      "会員管理システム",
+      "イベント情報配信",
+      "アンケート収集・分析",
+      "SDGs目標追跡"
+    ],
+    "background": "岡山県内でのSDGs推進活動をより効果的に行うため、参加者の管理やフィードバック収集を一元化するシステムとして開発されました。",
+    "challenges": "多様なステークホルダーのニーズ対応、データの可視化",
+    "solutions": "ユーザーフレンドリーなインターフェースと包括的なデータ分析機能を実装しました。",
+    "embeddable": true
+  },
+  "kibichuo-tourism": {
+    "id": "kibichuo-tourism",
+    "title": "吉備中央町観光コンシェルジュアプリ",
+    "subtitle": "地域観光情報ガイドシステム",
+    "description": "吉備中央町の観光スポット、イベント、地域情報を提供する総合観光ガイドアプリケーションです。",
+    "url": "https://tourism-lemon.vercel.app/",
+    "category": "観光・地域振興",
+    "tags": ["観光", "地域情報", "ガイドアプリ", "地方創生"],
+    "year": "2024",
+    "status": "運用中",
+    "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+    "features": [
+      "観光スポット情報",
+      "イベントカレンダー",
+      "ルート案内",
+      "地域グルメ情報"
+    ],
+    "background": "吉備中央町の観光振興と地域活性化を目的として、来訪者に包括的な地域情報を提供するデジタルコンシェルジュとして開発されました。",
+    "challenges": "地域情報の網羅性、ユーザビリティの向上",
+    "solutions": "地元関係者との連携により正確な情報収集を行い、直感的なナビゲーション設計を実現しました。",
+    "embeddable": false
+  },
+  "homecoming-stamp": {
+    "id": "homecoming-stamp",
+    "title": "ホームカミングデイスタンプラリーアプリ",
+    "subtitle": "イベント参加型スタンプラリーシステム",
+    "description": "ホームカミングデイイベントでの参加促進を目的としたデジタルスタンプラリーアプリケーションです。",
+    "url": "https://fes-stamp-flax.vercel.app/",
+    "category": "イベント・エンターテイメント",
+    "tags": ["スタンプラリー", "イベント", "ゲーミフィケーション", "参加促進"],
+    "year": "2024",
+    "status": "運用中",
+    "technologies": ["Next.js", "React", "TypeScript", "Vercel"],
+    "features": [
+      "デジタルスタンプ収集",
+      "進捗トラッキング",
+      "報酬システム",
+      "ソーシャル機能"
+    ],
+    "background": "イベント参加者のエンゲージメント向上とイベントの盛り上げを目的として、ゲーミフィケーション要素を取り入れたスタンプラリーシステムとして開発されました。",
+    "challenges": "参加者のモチベーション維持、リアルタイム進捗管理",
+    "solutions": "達成感を高める報酬システムと、リアルタイムでの進捗共有機能を実装しました。",
+    "embeddable": true
+  }
+}

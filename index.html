@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-texture"></div>
+    
+    <div class="container">
+        <nav class="nav-bar" id="navbar">
+            <div class="nav-content">
+                <a href="#" class="nav-logo" onclick="showHome()">Portfolio</a>
+                <button class="nav-toggle" onclick="toggleNav()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Home Page -->
+        <div id="home-page" class="page-container active">
+            <header class="header-clay">
+                <div class="header-content">
+                    <h1 class="title-clay">ポートフォリオ</h1>
+                    <p class="subtitle-clay">開発したWebアプリケーション一覧</p>
+                    <div class="header-decoration"></div>
+                </div>
+            </header>
+            
+            <main>
+                <div id="projects" class="projects-grid">
+                    <!-- Projects will be loaded here by JavaScript -->
+                </div>
+                
+                <div class="floating-elements">
+                    <div class="float-element float-1"></div>
+                    <div class="float-element float-2"></div>
+                    <div class="float-element float-3"></div>
+                </div>
+            </main>
+        </div>
+
+        <!-- Project Detail Page -->
+        <div id="detail-page" class="page-container">
+            <div class="detail-content">
+                <button class="back-button" onclick="showHome()">
+                    <span class="back-arrow">←</span>
+                    <span>一覧に戻る</span>
+                </button>
+                
+                <div id="project-detail" class="project-detail">
+                    <!-- Project details will be loaded here -->
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer-clay">
+            <div class="footer-content">
+                <p>&copy; 2024 Portfolio</p>
+                <div class="footer-decoration"></div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
